@@ -9,6 +9,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.superhero.R
 import com.example.superhero.data.SuperHero
+import com.example.superhero.databinding.ActivityDetailBinding
+import com.example.superhero.databinding.ActivityMainBinding
 import com.example.superhero.utils.SuperHeroService
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
@@ -20,25 +22,25 @@ class DetailActivity : AppCompatActivity() {
     companion object {
         const val SUPERHERO_ID = "SUPERHERO_ID"
     }
-    lateinit var avatarImageView: ImageView
-    lateinit var nameTextView: TextView
+
+    lateinit var binding: ActivityDetailBinding
 
     lateinit var superhero: SuperHero
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_detail)
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val id = intent.getStringExtra(SUPERHERO_ID)!!
+        supportActionBar?.title = " "
 
-        avatarImageView = findViewById(R.id.avatarImageView)
-        nameTextView = findViewById(R.id.nameTextView)
+        val id = intent.getStringExtra(SUPERHERO_ID)!!
 
         getSuperHeroID(id)
     }
@@ -59,7 +61,12 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun loadData() {
-        nameTextView.text = superhero.name
-        Picasso.get().load(superhero.image.url).into(avatarImageView)
+        supportActionBar?.title = superhero.name
+        supportActionBar?.subtitle = superhero.biography.realName
+        Picasso.get().load(superhero.image.url).into(binding.avatarImageView)
+
+        binding.alignmentTextView.text = superhero.biography.alignment
+        binding.publisherTextView.text = superhero.biography.publisher
+        binding.placeofbirthTextView.text = superhero.biography.placeOfBirth
     }
 }
