@@ -8,28 +8,28 @@
     android:orientation="vertical"
     tools:context=".activities.DetailActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="280dp"
-        android:layout_height="360dp"
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
-
-        <ImageView
-            android:id="@+id/avatarImageView"
-            android:layout_width="280dp"
-            android:layout_height="360dp"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/ic_launcher_background" />
-
-    </androidx.cardview.widget.CardView>
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_marginTop="-32dp"
+        android:layout_marginBottom="-32dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avatarImageView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,15 +37,17 @@
             android:orientation="vertical">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigationView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:menu="@menu/activity_detail_navigation"/>
+                app:menu="@menu/activity_detail_navigation" />
 
             <LinearLayout
-                android:id="@+id/contentbiography"
+                android:id="@+id/contentBiography"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -73,62 +75,186 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_weight="1"
+                        android:text="Place of birth:"
+                        android:textAlignment="textEnd" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Alignment:"
-                            android:textAlignment="textEnd" />
-
-                        <TextView
-                            android:id="@+id/alignmentTextView"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:layout_weight="2"
-                            android:textStyle="bold"
-                            tools:text="Good" />
-
-                    </LinearLayout>
-
+                    <TextView
+                        android:id="@+id/placeofbirthTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        tools:text="Kripton" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_weight="1"
+                        android:text="Alignment:"
+                        android:textAlignment="textEnd" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Place of birth:"
-                            android:textAlignment="textEnd" />
+                    <TextView
+                        android:id="@+id/alignmentTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="2"
+                        android:textStyle="bold"
+                        tools:text="Good" />
 
-                        <TextView
-                            android:id="@+id/placeofbirthTextView"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
-                            android:layout_weight="2"
-                            android:textStyle="bold"
-                            tools:text="Kripton" />
+                </LinearLayout>
 
-                    </LinearLayout>
+            </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/contentAppearance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gender:"
+                        android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/genderTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        tools:text="M"
+                        android:textStyle="bold"
+                        android:layout_marginStart="4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Race:"
+                        android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/raceTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        tools:text="H"
+                        android:textStyle="bold"
+                        android:layout_marginStart="4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Eye Color:"
+                        android:textAlignment="textEnd"/>
+
+
+                    <TextView
+                        android:id="@+id/eyecolorTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        tools:text="R"
+                        android:textStyle="bold"
+                        android:layout_marginStart="4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Hair Color:"
+                        android:textAlignment="textEnd"/>
+
+                    <TextView
+                        android:id="@+id/haircolorTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        tools:text="R"
+                        android:textStyle="bold"
+                        android:layout_marginStart="4dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contentStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Intelligence:" />
+
+                    <TextView
+                        android:id="@+id/intelligenceTextView"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textStyle="bold"
+                        tools:text="100" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/intelligenceProgress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:progress="30" />
 
                 </LinearLayout>
 
@@ -136,8 +262,8 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
 
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>

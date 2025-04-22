@@ -1,6 +1,10 @@
 package com.example.superhero.activities
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +20,7 @@ import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.core.graphics.drawable.toDrawable
 
 class DetailActivity : AppCompatActivity() {
 
@@ -43,6 +48,22 @@ class DetailActivity : AppCompatActivity() {
         val id = intent.getStringExtra(SUPERHERO_ID)!!
 
         getSuperHeroID(id)
+
+        binding.navigationView.setOnItemSelectedListener { menuItem ->
+            binding.contentBiography.visibility = View.GONE
+            binding.contentAppearance.visibility = View.GONE
+            binding.contentStats.visibility = View.GONE
+
+            when (menuItem.itemId) {
+                R.id.menu_biography -> binding.contentBiography.visibility = View.VISIBLE
+                R.id.menu_appearance -> binding.contentAppearance.visibility = View.VISIBLE
+                R.id.menu_stats -> binding.contentStats.visibility = View.VISIBLE
+            }
+            true
+        }
+
+        binding.navigationView.selectedItemId = R.id.menu_biography
+
     }
 
     fun getSuperHeroID(id: String){
@@ -68,5 +89,13 @@ class DetailActivity : AppCompatActivity() {
         binding.alignmentTextView.text = superhero.biography.alignment
         binding.publisherTextView.text = superhero.biography.publisher
         binding.placeofbirthTextView.text = superhero.biography.placeOfBirth
+
+        binding.intelligenceTextView.text = "${superhero.stats.intelligence.toIntOrNull() ?: 0}"
+        binding.intelligenceProgress.progress = superhero.stats.intelligence.toIntOrNull() ?: 0
+
+        binding.genderTextView.text = superhero.appearance.gender
+        binding.raceTextView.text = superhero.appearance.race
+        binding.eyecolorTextView.text = superhero.appearance.eyeColor
+        binding.haircolorTextView.text = superhero.appearance.hairColor
     }
 }
