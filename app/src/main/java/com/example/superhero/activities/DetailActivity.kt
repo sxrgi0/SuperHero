@@ -50,14 +50,14 @@ class DetailActivity : AppCompatActivity() {
         getSuperHeroID(id)
 
         binding.navigationView.setOnItemSelectedListener { menuItem ->
-            binding.contentBiography.visibility = View.GONE
-            binding.contentAppearance.visibility = View.GONE
-            binding.contentStats.visibility = View.GONE
+            binding.contentBiography.root.visibility = View.GONE
+            binding.contentAppearance.root.visibility = View.GONE
+            binding.contentStats.root.visibility = View.GONE
 
             when (menuItem.itemId) {
-                R.id.menu_biography -> binding.contentBiography.visibility = View.VISIBLE
-                R.id.menu_appearance -> binding.contentAppearance.visibility = View.VISIBLE
-                R.id.menu_stats -> binding.contentStats.visibility = View.VISIBLE
+                R.id.menu_biography -> binding.contentBiography.root.visibility = View.VISIBLE
+                R.id.menu_appearance -> binding.contentAppearance.root.visibility = View.VISIBLE
+                R.id.menu_stats -> binding.contentStats.root.visibility = View.VISIBLE
             }
             true
         }
@@ -86,16 +86,19 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.subtitle = superhero.biography.realName
         Picasso.get().load(superhero.image.url).into(binding.avatarImageView)
 
-        binding.alignmentTextView.text = superhero.biography.alignment
-        binding.publisherTextView.text = superhero.biography.publisher
-        binding.placeofbirthTextView.text = superhero.biography.placeOfBirth
+        //Biography
+        binding.contentBiography.alignmentTextView.text = superhero.biography.alignment
+        binding.contentBiography.publisherTextView.text = superhero.biography.publisher
+        binding.contentBiography.placeofbirthTextView.text = superhero.biography.placeOfBirth
 
-        binding.intelligenceTextView.text = "${superhero.stats.intelligence.toIntOrNull() ?: 0}"
-        binding.intelligenceProgress.progress = superhero.stats.intelligence.toIntOrNull() ?: 0
+        //Stats
+        binding.contentStats.intelligenceTextView.text = "${superhero.stats.intelligence.toIntOrNull() ?: 0}"
+        binding.contentStats.intelligenceProgress.progress = superhero.stats.intelligence.toIntOrNull() ?: 0
 
-        binding.genderTextView.text = superhero.appearance.gender
-        binding.raceTextView.text = superhero.appearance.race
-        binding.eyecolorTextView.text = superhero.appearance.eyeColor
-        binding.haircolorTextView.text = superhero.appearance.hairColor
+        //Appearance
+        binding.contentAppearance.genderTextView.text = superhero.appearance.gender
+        binding.contentAppearance.raceTextView.text = superhero.appearance.race
+        binding.contentAppearance.eyecolorTextView.text = superhero.appearance.eyeColor
+        binding.contentAppearance.haircolorTextView.text = superhero.appearance.hairColor
     }
 }
