@@ -12,28 +12,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Intelligence:" />
-
-        <TextView
-            android:id="@+id/intelligenceTextView"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:textStyle="bold"
-            tools:text="100" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/intelligenceProgress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="2"
-            android:progress="30" />
+        <com.github.mikephil.charting.charts.RadarChart
+            android:id="@+id/radarChart"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"/>
 
     </LinearLayout>
+
 
 </LinearLayout>

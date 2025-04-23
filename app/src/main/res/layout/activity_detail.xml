@@ -21,7 +21,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="-32dp"
         android:layout_marginBottom="-32dp"
         android:layout_weight="1"
@@ -45,25 +45,25 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <!-- Biography-->
 
                 <include
                     android:id="@+id/contentBiography"
-                    layout="@layout/detail_content_biography"/>
+                    layout="@layout/detail_content_biography" />
 
                 <!--Appearance-->
 
                 <include
                     android:id="@+id/contentAppearance"
-                    layout="@layout/detail_content_appearance"/>
+                    layout="@layout/detail_content_appearance" />
 
                 <!--Stats-->
 
                 <include
                     android:id="@+id/contentStats"
-                    layout="@layout/detail_content_stats"/>
+                    layout="@layout/detail_content_stats" />
 
             </FrameLayout>
 

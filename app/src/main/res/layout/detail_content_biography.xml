@@ -74,4 +74,49 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Alter Egos:"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/alterEgoTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            tools:text="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="First appearance:"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/firstAppearanceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            tools:text="2" />
+
+    </LinearLayout>
 </LinearLayout>
