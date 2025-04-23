@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">SuperHero</string>
+    <string name="app_name">Superheroes</string>
+
+    <string name="biography">Biography</string>
+    <string name="appearance">Appearance</string>
+    <string name="stats">Stats</string>
+
+    <string name="publisher">Publisher:</string>
+    <string name="placeofbirth">Place of birth:</string>
+    <string name="alignment">Alignment:</string>
+    <string name="alteregos">Alter Egos:</string>
+    <string name="firstappearance">First Appearance:</string>
+
+    <string name="gender">Gender:</string>
+    <string name="race">Race:</string>
+    <string name="eyecolor">Eye Color:</string>
+    <string name="haircolor">Hair Color:</string>
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
+
+    <string name="intelligence">Intelligence:</string>
+    <string name="strength">Strength:</string>
+    <string name="speed">Speed:</string>
+    <string name="durability">Durability:</string>
+    <string name="power">Power:</string>
+    <string name="combat">Combat:</string>
 </resources>

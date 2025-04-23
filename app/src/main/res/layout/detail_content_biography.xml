@@ -14,7 +14,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Publisher:"
+            android:text="@string/publisher"
             android:textAlignment="textEnd"/>
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Place of birth:"
+            android:text="@string/placeofbirth"
             android:textAlignment="textEnd" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Alignment:"
+            android:text="@string/alignment"
             android:textAlignment="textEnd" />
 
         <TextView
@@ -83,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Alter Egos:"
+            android:text="@string/alteregos"
             android:textAlignment="textEnd" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="First appearance:"
+            android:text="@string/firstappearance"
             android:textAlignment="textEnd" />
 
         <TextView

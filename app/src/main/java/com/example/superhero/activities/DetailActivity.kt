@@ -133,7 +133,13 @@ class DetailActivity : AppCompatActivity() {
             RadarEntry(superhero.stats.combat.toFloat())
         )
 
-        val labels = listOf("Intelligence", "Strength", "Speed", "Durability", "Power", "Combat")
+        val labels = listOf(
+            getString(R.string.intelligence),
+            getString(R.string.strength),
+            getString(R.string.speed),
+            getString(R.string.durability),
+            getString(R.string.power),
+            getString(R.string.combat))
 
         val dataset = RadarDataSet(entries, "Stats").apply {
             color = ContextCompat.getColor(this@DetailActivity, R.color.lineColor)
